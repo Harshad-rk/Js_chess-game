@@ -112,6 +112,7 @@ animation-iteration-count:infinite;
 
 .Piece {
 	position: absolute;
+	height: 63px;
 }
 
 .Square {

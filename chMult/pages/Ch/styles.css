@@ -115,6 +115,7 @@ animation-iteration-count:infinite;
 
 .Piece {
 	position: absolute;
+	height: 63px;
 }
 
 .Square {
@@ -124,11 +125,11 @@ animation-iteration-count:infinite;
 }
 
 .Light {
-	background-color:#5fbcd3;
+	background-color:white;
 }
 
 .Dark {
-	background-color:#afdde9;
+	background-color:black;
 }
 
 .SqSelected {
