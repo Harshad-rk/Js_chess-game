@@ -19,6 +19,9 @@
 		<link rel="stylesheet" href="styles.css"> 
 		<title>JSChess</title>
 		<link href="styles.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="../../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	
+
 		<script type="text/javascript"> if (!window.console) console = {log: function() {}}; </script>
 	</head>
 	<body>
@@ -43,6 +46,33 @@
 		</div>				
 		<div id="ChatMessages">
 		</div>
+		<div class="card bg-light mb-3" style="max-width: 20rem;">
+       <div class="card-header">Moves</div>
+   <div class="card-body">
+    <table class="table table-hover">
+  
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <?php 
+    echo $_COOKIE["gfg"]; 
+?> 
+     
+    </tr>
+  </tbody>
+</table>
+  </div> 
+</div>
 		<div id="AvailablePlayers"></div>
 		
 		<div id="ChatMessages"></div>

@@ -127,8 +127,7 @@ function MakeUserMove() {
 	if(UserMove.from != SQUARES.NO_SQ && UserMove.to != SQUARES.NO_SQ) {
 		console.log("User Move:" + PrSq(UserMove.from) + PrSq(UserMove.to));
 		var parsed = ParseMove(UserMove.from,UserMove.to);
-        var move1 = "User Move:" + PrSq(UserMove.from) + PrSq(UserMove.to) ;
-        console.log("move1", move1)
+        
 		DeselectSq(UserMove.from);
 		DeselectSq(UserMove.to);
 		

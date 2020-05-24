@@ -46,7 +46,6 @@ function BoardToFen() {
 	var fenStr = '';
 	var row,col,sq,piece;
 	var emptyCount = 0;
-	alert(PIECES);
 	for(row = ROWS.ROW_8; row >= ROWS.ROW_1; row--) {
 		emptyCount = 0; 
 		for(col = COLUMNS.COL_A; col <= COLUMNS.COL_H; col++) {

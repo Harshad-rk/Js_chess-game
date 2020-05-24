@@ -11,6 +11,8 @@ session_start();
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/sliderStyle.css">
 		<link href="stylesChess.css" rel="stylesheet" type="text/css">
+		
+
 		<script type="text/javascript"> if (!window.console) console = {log: function() {}}; </script>
 	</head>
 	<body>
