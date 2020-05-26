@@ -23,7 +23,10 @@ if (mysqli_num_rows($rs4)>0) {
 		return true;
 	}
 else{
-
+?>
+<div style="height: 900px; width: 100%; background-image:url(chMult/pages/Ch/images/background.gif
+); " ><center><img style="margin-top: 470px;" src="chMult/pages/Ch/images/loading2.gif"></center></div>
+<?php
 }
 	
 }else{
