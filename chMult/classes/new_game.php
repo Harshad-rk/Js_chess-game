@@ -1,10 +1,12 @@
 <script type="text/javascript">
-function autoserch().stop();
+clearInterval(myVar);
 </script>
 <?php
 include "../../connectToDB.php";
 var_dump($_GET);
 // header("Location: Ch/index.php");
+//$_SESSION['joinGame']=true;
+
 exit();
 
 
@@ -16,4 +18,4 @@ exit();
 //   `MoveString` varchar(100) NOT NULL,
 //   `move` varchar(50) NOT NULL
 // ) ENGINE=InnoDB DEFAULT CHARSET=latin1";
-
+?>

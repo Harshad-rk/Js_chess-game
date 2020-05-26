@@ -26,6 +26,7 @@ if (isset($_POST['username'])) {
     $_SESSION['username'] = $uname;
 	$_SESSION['userpassword'] =$pword;
 	$_SESSION['UserId'] = $UserId;
+	$_SESSION['joinGame']=false;
 		$output = array("msg"=>"Hello $uname! ", "loggedin"=>"true");
     } 
 	echo json_encode($output);
