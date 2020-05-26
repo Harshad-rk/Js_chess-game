@@ -23,4 +23,24 @@ try{
 }catch(Excepion $e){
 	die("ERROR : ".$e->getMessage());
 }
+
+
+
+
+$conn = mysqli_connect($dbhost, $dbuser, $dbpass);
+	if (!$conn)
+	{
+		die("connection faild :" . mysqli_connect_error());
+	}
+	//echo "server connected sucessfully";
+
+	$db = mysqli_select_db($conn,$dbname);
+
+	if ($db) {
+		//echo "detabase sellected";
+	}
+	else
+	{
+		echo "database erroe";
+	}
 ?>

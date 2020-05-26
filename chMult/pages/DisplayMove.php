@@ -8,7 +8,8 @@
 		$move->setMoveString($_POST['MoveString']);
 		$lMove=$move->getLastMove($_SESSION['GameId']);
 	}
-	$output = array("msg"=>"$lMove", "loggedin"=>"true");
+	$output = array("msg"=>"$lMove", "loggedin"=>"true"); 
+	// echo $output;
 	echo json_encode($output);
 	/* 
 		Return json to gui.js in function loadMove()

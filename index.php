@@ -1,5 +1,6 @@
 <?php
 session_start();
+// var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -12,10 +13,10 @@ session_start();
 		<link rel="stylesheet" href="css/sliderStyle.css">
 		<link href="stylesChess.css" rel="stylesheet" type="text/css">
 		
-
+		<script type="text/javascript" src="js/jquery1.js"></script>
 		<script type="text/javascript"> if (!window.console) console = {log: function() {}}; </script>
 	</head>
-	<body>
+	<body id="maching_all_players">
 		<header>
 			<h3>JS Chess</h3>
 		</header>
@@ -44,7 +45,8 @@ session_start();
 			<br/>
 			<input type="submit" id="multiplayer_submit" 
 			onclick="parent.location='chMult/pages/UserLogin.php'" 
-			value="Multiplayer game">				
+			value="Multiplayer game">	
+			<button id="start_new_game" >Start game</button>			
 		</div>
 		
 		<span id="GameStatus"></span>
@@ -59,6 +61,7 @@ session_start();
 			&copy; 	 All rights reserved.
 			</div>	
 		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>		
@@ -78,6 +81,7 @@ session_start();
 		<script src="js/gui.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/buttons/loadSaveGame.js"></script>
+		<script src="js/machingplayer.js"></script>
 	</body>
 </html>
 

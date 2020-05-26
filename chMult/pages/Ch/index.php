@@ -1,6 +1,7 @@
 <?php
 	
 	session_start();
+	// echo $_SESSION['GameId'];
 	/* 
 		If New opponent button is pushed the player is redirected to indexMult.
 		This page checks if it has a gameId and if so it deletes the gameId for the user
@@ -64,9 +65,7 @@
     </tr>
     <tr>
       <th scope="row">3</th>
-      <?php 
-    echo $_COOKIE["gfg"]; 
-?> 
+     
      
     </tr>
   </tbody>

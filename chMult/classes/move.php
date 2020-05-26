@@ -70,7 +70,7 @@ class move {
 
 	public function InsertMove($id){
 		include "../../connectToDB.php";
-
+		// include "../../tutorbuz_web.sql";
 		$MoveUserId=$this->getMoveUserId();
 		$MoveString=$this->getMoveString();
 		$MoveId =1;	

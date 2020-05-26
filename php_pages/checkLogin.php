@@ -19,11 +19,13 @@ if (isset($_POST['username'])) {
              $id = $row["UserId"];
 			 $uname = $row["UserName"];
 			 $pword = $row["UserPassword"];
+			 $UserId = $row["UserId"];
 			 //$pword = $row["password"];
 			 
         }
     $_SESSION['username'] = $uname;
 	$_SESSION['userpassword'] =$pword;
+	$_SESSION['UserId'] = $UserId;
 		$output = array("msg"=>"Hello $uname! ", "loggedin"=>"true");
     } 
 	echo json_encode($output);
