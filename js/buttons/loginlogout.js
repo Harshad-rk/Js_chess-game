@@ -1,5 +1,6 @@
 var logoutbutton = $('#logout_submit');
 logoutbutton.hide();
+var login = $('#loginmodel');
 var loginbutton = $('#submit');
 var registerButton= $('#registerButton');
 var SaveLoadOutput = $('#SaveLoadOutput');
@@ -16,8 +17,9 @@ $("#logout_submit").click(function () {
 		//alert(data.loggedin);
 		if (data.loggedin == "false"){
 			loginbutton.show();
+			login.show();
 			logoutbutton.hide();
-			registerButton.show();
+			registerButton.hide();
 			SaveLoadOutput.hide();
 			logInForm.show();
 			
@@ -38,6 +40,7 @@ $("#submit").click(function () {
 			loginbutton.hide();
 			logoutbutton.show();
 			registerButton.hide();
+			login.hide();
 			formcontainer.hide();
 			SaveLoadOutput.show();
 			multiplayersubmit.show();

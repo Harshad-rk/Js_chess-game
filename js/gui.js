@@ -348,12 +348,12 @@ $("#NewGameButton").click(function () {
 
 function newGameAjax() {
 	console.log('new Game Ajax');
-	$.ajax({
-		url : "insertNewGame.php",
-		cache: false
-		}).done(function( html ) {
-		  console.log('result:' + html);
-		});
+	//$.ajax({
+	//	url : "insertNewGame.php",
+	//	cache: false
+	//	}).done(function( html ) {
+	//	  console.log('result:' + html);
+	//	});
 }
 
 function initBoardSquares() {

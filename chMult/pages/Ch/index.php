@@ -17,7 +17,7 @@
 		<meta charset="utf-8">
 		<meta name="keywords" content="Chess, Engine, Javascript, Play Chess, Chess Program, Javascript Chess, Game">
 		<link rel="stylesheet" href="styles.css"> 
-		<title>JSChess</title>
+		<title>Chess</title>
 		<link href="styles.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="../../../css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	
@@ -26,7 +26,7 @@
 	</head>
 	<body>
 		<header>
-			<h3>JS Chess</h3>			
+			<h3>Chess Multiplayer</h3>			
 			
 		</header>
 		   
@@ -43,10 +43,12 @@
 		</div>
 		<div id="CurrentFenDiv" >
 			<span id="currentFenSpan" style="display: none;"></span>		
-		</div>				
-		<div id="ChatMessages">
-		</div>
-		<div class="card bg-light mb-3" style="max-width: 20rem;">
+		</div>	
+		<span id="GameStatus" style="float: right;"></span>	
+		<!--<div id="ChatMessages">
+		</div>-->
+
+		<!--<div class="card bg-light mb-3" style="max-width: 20rem;">
        <div class="card-header">Moves</div>
    <div class="card-body">
     <table class="table table-hover">
@@ -64,24 +66,26 @@
     </tr>
     <tr>
       <th scope="row">3</th>
-      <?php 
-    echo $_COOKIE["gfg"]; 
-?> 
-     
+     <?php 
+if (isset($_POST['usermoves'])) {
+	echo $_POST['usermoves'];
+}
+     ?>
     </tr>
   </tbody>
 </table>
   </div> 
-</div>
+</div>-->
 		<div id="AvailablePlayers"></div>
 		
-		<div id="ChatMessages"></div>
-		<div id="ChatBig"> 
+	<!--	<div id="ChatMessages"></div>-->
+	<!--	<div id="ChatBig"> 
 			<span style="color:green">Chat</span><br/>
 			<textarea id="ChatText" name="ChatText"></textarea>
-		</div>
-		<button type="button" id="NewGameButton">New Game</button><br/>
-		<span id="GameStatus"></span>
+		</div>-->
+		<!--<button type="button" id="NewGameButton">New Game</button><br/>-->
+		
+		
 <!--This div not outputted but needed to work  -->			
 		<div id="EngineOutput"><br/>
 			<select id="ThinkTimeChoice" style="display: none;">

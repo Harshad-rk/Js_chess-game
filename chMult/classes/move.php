@@ -86,5 +86,18 @@ class move {
 			}
 		}
 	}
+	public function updateMove($moves){
+		
+      include "../../connectToDB.php";
+      // $MoveUserId=$this->getMoveUserId();
+		//$MoveUpdate =$_db->prepare("UPDATE users SET moves=$moves WHERE UserId=1");
+		//echo $MoveUpdate;
+		//$query= "UPDATE users SET moves=$moves WHERE UserId=1";
+		//$rs=mysqli_query($_db,$query);
+		//echo $query;
+                $MoveUpdate =$_db->prepare("UPDATE users SET moves=? WHERE UserId=?");
+				$MoveUpdate->execute(array($moves));
+				//echo $MoveUpdate;	
+	}
 }
 ?>

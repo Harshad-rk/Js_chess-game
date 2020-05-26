@@ -1,16 +1,16 @@
 <!-- Login------------------------------------------------------------>	
 	<div id="infoSQL" ></div>
-	<input type="submit" id="logout_submit" value="logout" style="display:none">
+	<input type="submit" class="btn btn-primary" id="logout_submit"  value="logout" style="display:none">
 <!-- Form------------------------------------------------------------>	
-<input type="submit" id="registerButton" value="register">
-
+<!--<input type="submit" id="registerButton" value="register">
+-->
 <!-- Form------------------------------------------------------------>	
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<button  type="button" id="loginmodel" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
  Login
 </button>
 
-<!-- Modal -->
+<!-- Modal -->    
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -35,13 +35,13 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" id="submit" value="login">Login</button>
+        <button type="submit" class="btn btn-primary" data-dismiss="modal" id="submit" value="login">Login</button>
       </div>
     </div>
   </div>
 </div>
 <!-- Button trigger modal -->
-<button  type="submit" id="registerButton" value="register" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter1">
+<button  type="submit" style="display: none;" id="registerButton"class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter1">
   Register
 </button>
 
@@ -56,7 +56,7 @@
         </button>
       </div>
       <div class="modal-body">
-       <div type="text" id="form_container" method="post" style="display:none">
+       <div  method="post">
 	<div class="field">
 		<label for="regusername">Choose a username</label>
 		<input type="text" name="regusername" id="regusername" value="">
@@ -70,10 +70,13 @@
 		<input type="password" name="regpassword_again" id="regpassword_again">
 	</div>
 	
-	<input type="submit" id="register_submit" value="Register">
+
 </div>	
       </div>
-      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" type="submit" id="register_submit" class="btn btn-primary" data-dismiss="modal">Register</button>
+      </div>
     </div>
   </div>
 </div>
