@@ -4,5 +4,5 @@ $("#start_new_game").click(function(){
 			$("#maching_all_players").load("chMult/classes/userserch.php");
 	},1500);
 
-	// $("#maching_all_players").load("chMult/classes/userserch.php");
+	$("#maching_all_players").load("chMult/classes/userserch.php");
 });

@@ -4,6 +4,9 @@ clearInterval(myVar);
 <?php
 include "../../connectToDB.php";
 var_dump($_GET);
+
+
+
 // header("Location: Ch/index.php");
 //$_SESSION['joinGame']=true;
 
