@@ -5,7 +5,7 @@
 		If New opponent button is pushed the player is redirected to indexMult.
 		This page checks if it has a gameId and if so it deletes the gameId for the user
 		and the opponent
-		The function DisplayMessageInGame() in chatBoxInGame.js is displaying the chats with a timeinterval. 
+	 	The function DisplayMessageInGame() in chatBoxInGame.js is displaying the chats with a timeinterval. 
 		It also check whether a user has 
 		a gameId, if not it is also redirected to intexMult.php
 	*/
@@ -19,9 +19,7 @@
 		<link rel="stylesheet" href="styles.css"> 
 		<title>Chess</title>
 		<link href="styles.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="../../../css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	
-
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	
 		<script type="text/javascript"> if (!window.console) console = {log: function() {}}; </script>
 	</head>
 	<body>
@@ -30,9 +28,10 @@
 			
 		</header>
 		   
-		<input type="submit" onclick="parent.location='../indexMult.php'" id="deleteGame-submit" value="New Opponent">
 		<h2>Welcome <span style="color:green"><?php echo $_SESSION['UserName'];?>! </span>You are playing against <span style="color:red"><?php echo $_SESSION['Opponent'];?>! </span>
-		</h2>	
+		</h2> 
+		<input type="submit" class="btn btn-primary" onclick="parent.location='../indexMult.php'" id="deleteGame-submit" value="New Opponent">
+				<button style="margin-top: 65px;" type="button" class="btn btn-primary" id="NewGameButton">New Game</button>
 		<div id="FenInDiv" style="display: none;">			
 			<input type="text" id="fenIn"/>		
 			<button type="button" id="SetFen">Set Position</button>	
@@ -43,49 +42,18 @@
 		</div>
 		<div id="CurrentFenDiv" >
 			<span id="currentFenSpan" style="display: none;"></span>		
-		</div>	
-		<span id="GameStatus" style="float: right;"></span>	
-		<!--<div id="ChatMessages">
-		</div>-->
-
-		<!--<div class="card bg-light mb-3" style="max-width: 20rem;">
-       <div class="card-header">Moves</div>
-   <div class="card-body">
-    <table class="table table-hover">
-  
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-     <?php 
-if (isset($_POST['usermoves'])) {
-	echo $_POST['usermoves'];
-}
-     ?>
-    </tr>
-  </tbody>
-</table>
-  </div> 
-</div>-->
+		</div>				
+		<div id="ChatMessages" style="display: none;">
+		</div>
 		<div id="AvailablePlayers"></div>
 		
-	<!--	<div id="ChatMessages"></div>-->
-	<!--	<div id="ChatBig"> 
+		<div id="ChatMessages" style="display: none;"></div>
+		<div id="ChatBig" style="display: none;"> 
 			<span style="color:green">Chat</span><br/>
 			<textarea id="ChatText" name="ChatText"></textarea>
-		</div>-->
-		<!--<button type="button" id="NewGameButton">New Game</button><br/>-->
+		</div>
 		
-		
+		<span style="margin: 250px 0 0 400px; font: 20px;" id="GameStatus" style="float: right;"></span>
 <!--This div not outputted but needed to work  -->			
 		<div id="EngineOutput"><br/>
 			<select id="ThinkTimeChoice" style="display: none;">

@@ -36,16 +36,16 @@
 		<div id="AvailablePlayers">
 		</div>
 		
-		<!--<div id="ChatMessages">
-		</div>-->
-	<!--<div id="ChatBig"> 
+		<div id="ChatMessages" style="display: none;">
+		</div>
+	<div id="ChatBig" style="display: none;"> 
 		<span style="color:green">Chat</span><br/>
 		<textarea id="ChatText" name="ChatText"></textarea>
-	</div>-->
+	</div>
 	
 	<script src="../js/jquery.js"></script>	
 	<script src="../js/availablePlayers.js"></script>
-	<!--<script src="../js/chatbox.js"></script>-->		
+	<script src="../js/chatbox.js"></script>		
 	</body>
 </html>
 

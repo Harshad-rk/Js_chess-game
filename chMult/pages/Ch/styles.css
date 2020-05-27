@@ -88,7 +88,7 @@ animation-iteration-count:infinite;
 	position: relative;
 	left: 60px;
 	top: 20px;
-	width: 500px; /*480*/
+	width: 500px;
 	height: 500px;
 	border: solid #ffa500 10px;
 }

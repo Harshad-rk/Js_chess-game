@@ -132,11 +132,11 @@ function MakeUserMove() {
 		
 		var parsed = ParseMove(UserMove.from,UserMove.to);
 		
+		DeselectSq(UserMove.from);
 		DeselectSq(UserMove.to);
-		console.log("Parsed:" + parsed);
-		if (parsed != 0) {
-			console.log("realmove"+ moves)}
+		
 		//console.log("Parsed:" + parsed);
+		
 		if(parsed != NOMOVE) {
 			MakeMove(parsed);
 			MoveGUIPiece(parsed);
@@ -148,6 +148,9 @@ function MakeUserMove() {
 		UserMove.to = SQUARES.NO_SQ; 	
 	}
 }
+
+
+
 
 function UserColor() { // Is used to check which color the opponent has
 		var MoveString = BoardToFen();
@@ -205,11 +208,9 @@ function MakeUserMove2() {
 		
 		DeselectSq(UserMove.from);
 		DeselectSq(UserMove.to);
-        moves =  PrSq(UserMove.from) + PrSq(UserMove.to)	
-		console.log("Parsed:" + parsed);
-		if (parsed != 0) {
-        moves =  PrSq(UserMove.from) + PrSq(UserMove.to)
-			console.log("realmove"+ moves)}
+		
+		//console.log("Parsed:" + parsed);
+		
 		//alert("before: color " +$colorplayer+" brdside" +brd_side); 
 		if(parsed != NOMOVE && (($colorplayer==0 && brd_side ==0) || ($colorplayer==1 && brd_side ==1))) {
 			MakeMove(parsed);
@@ -235,34 +236,24 @@ function MakeUserMove2() {
 		UserMove.to = SQUARES.NO_SQ; 
 		//alert("outside: color " +$colorplayer+" brdside" +brd_side); 
 		//---------------------------------------------------------
-		//Nytt
-		if (parsed!= NOMOVE) {
-		var usermoves=moves;
-		}
-		else{
-			var usermoves="";
-		}		
+		//Nytt		
 		var MoveString = BoardToFen();
-		 
-
 				$.ajax({
 					type:'POST',
 					url:'../InsertMove.php',
-					data:{MoveString:MoveString,usermoves:usermoves},
+					data:{MoveString:MoveString},
 					dataType:'json',
 					success:function(data){
 						//alert(data.msg);
 						
-						
 				}
 		})
-			
+				
 		//---------------------------------------------------------
 		}
-}
-			
-
+		
 	
+}
 var timesRun = 0;
 var startTime = new Date().getTime();
 
@@ -271,6 +262,7 @@ var startTime = new Date().getTime();
 var MoveString = BoardToFen();
 function loadLMove(){ 
 		
+
        $.ajax({
 			type:'POST',
 			url:'../DisplayMove.php',
@@ -284,10 +276,9 @@ function loadLMove(){
 						var now = new Date().getTime();
 						//alert(data.msg);
 						ParseFen(data.msg);
-                             
 						++timesRun;
 						 console.log('Move displayed: ' + data.msg + 'Action ' + timesRun + ' started ' + (now - startTime) + 'ms after script start');
-						//PrintBoard();	
+						//PrintBoard();		
 						SetInitialBoardPieces();	
 						GameController.PlayerSide = brd_side;	
 						CheckAndSet();	
@@ -555,6 +546,7 @@ $("#NewGameButton").click(function () {
 			}
 		})
 });
+
 
 
 function initBoardSquares() {
