@@ -1,4 +1,4 @@
-<?php
+x<?php
 	
 	session_start();
 	// echo $_SESSION['GameId'];
@@ -75,13 +75,15 @@
 		<div id="AvailablePlayers"></div>
 		
 		<div id="ChatMessages"></div>
+		
 		<div id="ChatBig"> 
 			<span style="color:green">Chat</span><br/>
 			<textarea id="ChatText" name="ChatText"></textarea>
 		</div>
 		<button type="button" id="NewGameButton">New Game</button><br/>
 		<span id="GameStatus"></span>
-<!--This div not outputted but needed to work  -->			
+<!--This div not outputted but needed to work  -->	
+
 		<div id="EngineOutput"><br/>
 			<select id="ThinkTimeChoice" style="display: none;">
 			  <option value="1">1s</option>
@@ -105,6 +107,10 @@
 			
 		</div>
 <!--  -->	
+<div id="time_out_for">
+		<input type="text" name="color" id="Time_out_player" value="0">
+</div>	
+
 		<script src="js/jquery-1.10.1.min.js"></script>
 		<script src="js/defs.js"></script>
 		<script src="js/io.js"></script>
@@ -120,5 +126,21 @@
 		<script src="js/main.js"></script>
 		<script src="js/deleteDB.js"></script>
 		<script src="../../js/chatboxInGame.js"></script>	
+<script type="text/javascript">
+	function set_time_for(){
+		var player_time = $("#Time_out_player").val();
+		if (player_time == 0) {
+			document.getElementById("Time_out_player").value=1;
+			console.log($("#Time_out_player").val());
+		}
+		else{
+			document.getElementById("Time_out_player").value=0;
+			console.log($("#Time_out_player").val());
+		}
+	}
+
+	setInterval(set_time_for,8000);
+</script>
+
 	</body>
 </html>

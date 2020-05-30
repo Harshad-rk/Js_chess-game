@@ -39,7 +39,11 @@ function CheckResult() {
      $("#GameStatus").text("GAME DRAWN {insufficient material to mate}"); 
      return BOOL.TRUE;
     }
-	
+
+    // alert($colorplayer);
+	// if ($colorplayer!=$("#Time_out_player").val()) {
+	// 	return BOOL.FALSE;
+	// }
 	//console.log('Checking end of game');
 	GenerateMoves();
       
@@ -80,7 +84,7 @@ function ClickedSquare(pageX, pageY) {
 	
 	var workedX = Math.floor(position.left);
 	var workedY = Math.floor(position.top);
-	var pageX = Math.floor(pageX);
+	var pageX = Math.floor(pageX);	
 	var pageY = Math.floor(pageY);
 	
 	var file = Math.floor((pageX-workedX) / 60);
@@ -197,7 +201,7 @@ function flipGameOnceIfBlack() {
 }
 
 function MakeUserMove2() {
-	$colorplayer=UserColor();
+	$colorplayer=$("#Time_out_player").val();
 	// if (colorplayer==1 and GameController.PlayerSide ==1) or (colorplayer==0 and GameController.PlayerSide ==0)then do everything
 
 	if(UserMove.from != SQUARES.NO_SQ && UserMove.to != SQUARES.NO_SQ) {
@@ -213,12 +217,13 @@ function MakeUserMove2() {
 		if (parsed != 0) {
         moves =  PrSq(UserMove.from) + PrSq(UserMove.to)
 			console.log("realmove"+ moves)}
-		//alert("before: color " +$colorplayer+" brdside" +brd_side); 
-		if(parsed != NOMOVE && (($colorplayer==0 && brd_side ==0) || ($colorplayer==1 && brd_side ==1))) {
+		// alert("before: color " +$colorplayer+" brdside" +brd_side); 
+		if(parsed != NOMOVE  &&(($colorplayer==0 && brd_side ==0) || ($colorplayer==1 && brd_side ==1))) {
 			MakeMove(parsed);
 			MoveGUIPiece(parsed);
 			
 			CheckAndSet();
+			PreSearch();
 			/* 
 				PreSearch(); Only when playing against computer
 				When a move is made we need to change the move condition to 
@@ -227,7 +232,7 @@ function MakeUserMove2() {
 			*/
 			
 			GameController.PlayerSide = brd_side;	
-			//alert("inside after color " +$colorplayer+" brdside" +brd_side); 
+			// alert("inside after color " +$colorplayer+" brdside" +brd_side); 
 			//alert(brd_side); 
 		} else {
 			if(parsed != NOMOVE){
@@ -236,7 +241,7 @@ function MakeUserMove2() {
 		}
 		UserMove.from = SQUARES.NO_SQ;
 		UserMove.to = SQUARES.NO_SQ; 
-		//alert("outside: color " +$colorplayer+" brdside" +brd_side); 
+		// alert("outside: color " +$colorplayer+" brdside" +brd_side); 
 		//---------------------------------------------------------
 		//Nytt		
 		var MoveString = BoardToFen();
@@ -474,15 +479,16 @@ function SetSqSelected(sq) {
 
 function StartSearch() {
 	srch_depth = MAXDEPTH;
+	// alert(srch_depth);
 	var t = $.now();
-	var tt = $('#ThinkTimeChoice').val();
+	var tt = 8;
 	console.log("time:" + t + " TimeChoice:" + tt);
 	srch_time = parseInt(tt) * 1000;
 	SearchPosition(); 	
 	
 	// TODO MakeMove here on internal board and GUI
-	MakeMove(srch_best);
-	MoveGUIPiece(srch_best);	
+	MakeMove(0);
+	MoveGUIPiece(0);	
 	$('#ThinkingPng').remove();
 	CheckAndSet();
 }

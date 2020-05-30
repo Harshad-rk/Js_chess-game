@@ -148,6 +148,7 @@ function MakeUserMove() {
 
 $(document).on('click','.Piece', function (e) {	
 	console.log("Piece Click");
+	
 	if(srch_thinking == BOOL.FALSE && GameController.PlayerSide == brd_side) {
 		if(UserMove.from == SQUARES.NO_SQ) 
 			UserMove.from = ClickedSquare(e.pageX, e.pageY);
