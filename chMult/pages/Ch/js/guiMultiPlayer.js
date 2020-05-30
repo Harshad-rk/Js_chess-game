@@ -173,6 +173,7 @@ function UserColor() { // Is used to check which color the opponent has
 return $usercolor;
 }
 
+
 flipGameOnceIfBlack();
 function flipGameOnceIfBlack() {
 	var MoveString = BoardToFen();
@@ -208,7 +209,7 @@ function MakeUserMove2() {
 		
 		DeselectSq(UserMove.from);
 		DeselectSq(UserMove.to);
-		
+			
 		//console.log("Parsed:" + parsed);
 		
 		//alert("before: color " +$colorplayer+" brdside" +brd_side); 
@@ -217,16 +218,17 @@ function MakeUserMove2() {
 			MoveGUIPiece(parsed);
 			
 			CheckAndSet();
-			/* 
+			/* 		
 				PreSearch(); Only when playing against computer
 				When a move is made we need to change the move condition to 
 				the opponent
 				White gives brd_side = 1, black gives brd_side = 0 
 			*/
 			
-			GameController.PlayerSide = brd_side;	
+		GameController.PlayerSide = brd_side;	
 			//alert("inside after color " +$colorplayer+" brdside" +brd_side); 
 			//alert(brd_side); 
+			
 		} else {
 			if(parsed != NOMOVE){
 				GameController.PlayerSide = brd_side;	
@@ -245,7 +247,7 @@ function MakeUserMove2() {
 					dataType:'json',
 					success:function(data){
 						//alert(data.msg);
-						
+				
 				}
 		})
 				
@@ -311,9 +313,22 @@ setInterval(loadLMove,2000);
 //---------------------------------------------------------
 
 
+function click1(){
+alert("hi");
+
+}
 
 $(document).on('click','.Piece', function (e) {	
 	//console.log("Piece Click");
+	//alert($colorplayer==0 && brd_side ==0);
+$colorplayer=UserColor();
+if ($colorplayer==1 && brd_side ==1) {
+
+setTimeout(click1,2000);
+this.$colorplayer=0; 
+this.brd_side=0;
+//alert(UserColor());
+}
 	if(srch_thinking == BOOL.FALSE && GameController.PlayerSide == brd_side) {
 		if(UserMove.from == SQUARES.NO_SQ) 
 			UserMove.from = ClickedSquare(e.pageX, e.pageY);
@@ -324,7 +339,10 @@ $(document).on('click','.Piece', function (e) {
 		
 		
 	 
-	}	
+	}
+
+
+	
 });
 
 
@@ -542,7 +560,7 @@ $("#NewGameButton").click(function () {
 			dataType:'json',
 			success:function(data){
 				//alert(data.msg);
-				
+		
 			}
 		})
 });
@@ -583,7 +601,7 @@ function SetInitialBoardPieces() {
 	var sq;
 	var sq120;
 	var file,rank;	
-	var rankName;
+	var rankName; 
 	var fileName;
 	var imageString;
 	var pieceFileName;
@@ -615,3 +633,12 @@ function SetInitialBoardPieces() {
 	}
 
 }
+
+$("#timeout").load(function(){
+	alert($colorplayer==0 && brd_side ==0);
+$colorplayer=UserColor();
+if ($colorplayer==0 && brd_side ==0) {
+	$("#left").on('click','.Square');
+	alert("aaa");
+}
+});

@@ -13,13 +13,14 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<META HTTP-EQUIV=Refresh;	>
+		<META HTTP-EQUIV=Refresh;>
 		<meta charset="utf-8">
 		<meta name="keywords" content="Chess, Engine, Javascript, Play Chess, Chess Program, Javascript Chess, Game">
 		<link rel="stylesheet" href="styles.css"> 
 		<title>Chess</title>
 		<link href="styles.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		 
 		<script type="text/javascript"> if (!window.console) console = {log: function() {}}; </script>
 	</head>
 	<body>
@@ -27,7 +28,12 @@
 			<h3>Chess Multiplayer</h3>			
 			
 		</header>
+		   <div id="timeout">
 		   
+		   		
+		   	</div>
+		   
+		   </div>
 		<h2>Welcome <span style="color:green"><?php echo $_SESSION['UserName'];?>! </span>You are playing against <span style="color:red"><?php echo $_SESSION['Opponent'];?>! </span>
 		</h2> 
 		<input type="submit" class="btn btn-primary" onclick="parent.location='../indexMult.php'" id="deleteGame-submit" value="New Opponent">
@@ -55,8 +61,8 @@
 		
 		<span style="margin: 250px 0 0 400px; font: 20px;" id="GameStatus" style="float: right;"></span>
 <!--This div not outputted but needed to work  -->			
-		<div id="EngineOutput"><br/>
-			<select id="ThinkTimeChoice" style="display: none;">
+		<div id="EngineOutput" style="display: none;"><br/>
+			<select id="ThinkTimeChoice">
 			  <option value="1">1s</option>
 			  <option value="2">2s</option>
 			  <option value="4">4s</option>
@@ -95,3 +101,4 @@
 		<script src="../../js/chatboxInGame.js"></script>	
 	</body>
 </html>
+
